@@ -46,7 +46,7 @@ rice = {
     "Whole Rice":15,
     "No Rice":0}
 
-#User-defined Function for signing up
+#User-defined Function for signing up ☆ ZEA
 def signUp():
     print("""
 ==========SIGN-UP PAGE☆==========""")   
@@ -69,7 +69,7 @@ Please enter your full name (Last name, First Name): """).title()
            
 
 
-#User-defined function for logging in
+#User-defined function for logging in ☆ ZEA & ELJAI
 def login():
     print("""
 ==========LOG-IN PAGE☆==========
@@ -91,7 +91,7 @@ def login():
         return False
     
 
-#Main menu for login and sign-up
+#Main menu for login and sign-up ☆ ZEA
 while True:
     print("""
 ================================""")
@@ -128,7 +128,7 @@ Choice(1, 2, or 3): """)
     else:
         print("Invalid Choice! Please try again.")
     
-#Main menu/interface for ordering
+#Main menu/interface for ordering 
         
 print("""Welcome to the main menu!
 
@@ -151,7 +151,7 @@ Choose your food Category:
 
 Input your choice here: """)
         
-        #Condition to check if user chose snacks or inputted 1.
+        #Condition to check if user chose snacks or inputted 1. 
         if foodchoice == "1":
             while True:
                 print("""
@@ -204,7 +204,7 @@ Order Recorded! (Checkout feature comming soon)""")
                 
                 
     
-        #Condition to check if user chose meals or inputted 2.
+        #Condition to check if user chose meals or inputted 2. 
         elif foodchoice == "2":
             
             while True:
