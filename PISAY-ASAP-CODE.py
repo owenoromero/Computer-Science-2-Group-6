@@ -105,7 +105,7 @@ Welcome to Pisay Asap☆!
     welcomeChoice = input("""
 Choice(1, 2, or 3): """)
 
-    #Condition to check if user chose to log-in or input 1
+    #Condition to check if user chose to log-in or input 1 ☆ Zea
     if welcomeChoice == "1":
         result = login()
         
@@ -116,7 +116,7 @@ Choice(1, 2, or 3): """)
         else:
             continue # Sends user back to the start of the while loop
     
-     #Condition to check if user chose to sign-up or input 2
+     #Condition to check if user chose to sign-up or input 2 ☆ Zea
     elif welcomeChoice == "2":
         signUp()
     
@@ -128,7 +128,7 @@ Choice(1, 2, or 3): """)
     else:
         print("Invalid Choice! Please try again.")
     
-#Main menu/interface for ordering 
+#Main menu/interface for ordering ☆ Zea
         
 print("""Welcome to the main menu!
 
@@ -151,7 +151,7 @@ Choose your food Category:
 
 Input your choice here: """)
         
-        #Condition to check if user chose snacks or inputted 1. 
+        #Condition to check if user chose snacks or inputted 1. ☆ Eljai
         if foodchoice == "1":
             while True:
                 print("""
@@ -167,6 +167,7 @@ Input your choice here: """)
                 if snackchoice in snacks:
                     print(f"Added {snackchoice} to your tray!")
                     
+                #DRINKS!!1!! ☆ Zoie
                     addDrinksChoice = input("""
 Add drinks? [Y/N]: """).upper()
                     if addDrinksChoice == "Y":
@@ -204,7 +205,7 @@ Order Recorded! (Checkout feature comming soon)""")
                 
                 
     
-        #Condition to check if user chose meals or inputted 2. 
+        #Condition to check if user chose meals or inputted 2. ☆ 
         elif foodchoice == "2":
             
             while True:
