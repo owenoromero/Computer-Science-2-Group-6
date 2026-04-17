@@ -1,293 +1,240 @@
-#Pisay ASAP! 
+#Pisay ASAP
 
-#Dictionary/Database of usernames and passwords
+# Dictionary/Database of usernames and passwords
 users = {
-    "Villalon, Zea" : "123"}
+    "Villalon, Zea": "123"
+}
 
-#List of snacks with their prices
+# --- Menus ---
 snacks = {
-    "Mamon":34,
-    "Magic Flakes":25,
-    "Lumpia":25,
-    "Cream-O":10,
+    "Mamon": 34,
+    "Magic Flakes": 25,
+    "Lumpia": 25, "Cream-O": 10,
     "Skyflakes Condensada": 10,
     "Nissin Wafer": 5,
-    "Fita":15,
-    "Marie":15,
-    "Cassava Chips":50}
+    "Fita": 15,
+    "Marie": 15,
+    "Cassava Chips": 50}
 
-#List of drinks with their prices
 drinks = {
-    "Mogu Mogu":34,
-    "Milo":25,
-    "Chuckie":25,
-    "Calamansi Juice":16,
+    "Mogu Mogu": 34,
+    "Milo": 25,
+    "Chuckie": 25,
+    "Calamansi Juice": 16,
     "Melon Shake": 99,
     "Mango Shake": 99,
-    "Banana Shake":99,
-    "Grape Shake":99,
+    "Banana Shake": 99,
+    "Grape Shake": 99,
     "Watermelon Shake": 99}
 
-#List of meals with their prices
-meals = {
-    "Fried Chicken":70,
-    "Chicken Tinola":70,
-    "Sinigang na Isda":50,
-    "Honey Garlic Pork":70,
-    "Hungarian Sausage":35,
-    "Pork Asado":70,
-    "Hash Brown":50,
-    "Tortang Talong":40,
-    "Chicken Sisig":75}
+meals = {"Fried Chicken": 70,
+         "Chicken Tinola": 70,
+         "Sinigang na Isda": 50,
+         "Honey Garlic Pork": 70,
+         "Hungarian Sausage": 35,
+         "Pork Asado": 70,
+         "Hash Brown": 50,
+         "Tortang Talong": 40,
+         "Chicken Sisig": 75}
 
-#List of rices with their prices
-rice = {
-    "Half Rice":10,
-    "Whole Rice":15,
-    "No Rice":0}
+rice = {"Half Rice": 10,
+        "Whole Rice": 15,
+        "No Rice": 0}
 
-#User-defined Function for signing up ☆ ZEA
+tray = []
+loggedinuser = ""
+
+# --- FUNCTIONS ---
+
+# function for sign-up page
 def signUp():
-    print("""
-==========SIGN-UP PAGE☆==========""")   
+    print("\n==========SIGN-UP PAGE☆==========")
     while True:
-        #Function that asks for the user to enter their full name for their username
-        username = input("""
-Please enter your full name (Last name, First Name): """).title()
-    
-        #checks if username exists in the database
+        username = input("\nPlease enter your full name (Last name, First Name): ").title()
         if username in users:
             print("Username already exists! Please try again.")
-        
         else:
-            #Asks for the user to create their password
             password = input("Create password: ")
-            #Pairs value(password) to key(username)
             users[username] = password
-            print("Account created succesfully!")
+            print("Account created successfully!")
             break
-           
 
-
-#User-defined function for logging in ☆ ZEA & ELJAI
+# function for log-in page
 def login():
-    print("""
-==========LOG-IN PAGE☆==========
-""")
+    print("\n==========LOG-IN PAGE☆==========\n")
     user = input("Please enter your full name (Last name, First Name), or enter 'exit': ").title()
     
     if user.lower() == "exit":
         print("Returning to welcome page...")
-        return "exit"
+        return "exit", ""
     
     password = input("Enter your password: ")
-    
-    #checking for right username and password
     if user in users and users[user] == password:
         print("Log-in Successful!")
-        return True
+        return True, user
     else:
         print("Invalid username or password. Please try again.") 
-        return False
-    
+        return False, ""
 
-#Main menu for login and sign-up ☆ ZEA
+# calculation of payment and choice of payment method
+def payment(currentTray):
+    if not currentTray:
+        print("\nYour tray is empty!")
+        return None, 0, None
+    
+    totalPrice = sum(item['itemPrice'] for item in currentTray)
+    print("\n============================")
+    print(f"            PAYMENT\nTotal: Php {totalPrice}.00")
+    print("[1] Cash at Counter\n[2] Gcash")
+    
+    paymentMethods = {"1": "Cash at Counter", "2": "Gcash"}
+    paymentChoice = input("Select Payment Method: ")
+    paymentMethod = paymentMethods.get(paymentChoice, "Cash at Counter")
+    
+    return currentTray, totalPrice, paymentMethod
+
+# final receipt (list of items in tray 
+def receipt(userName, finalTray, totalPrice, paymentMethod):
+    print("\n===================================")
+    print("           PISAY ASAP!             ")
+    print("       Official Digital Slip       ")
+    print("===================================")
+    print(f"Customer: {userName}")
+    print("===================================")
+    
+    for item in finalTray:
+        print(f"{item['itemName']:<20} Php {item['itemPrice']:>7.2f}")
+    print("-----------------------------------")
+    print(f"TOTAL AMOUNT:        Php {totalPrice:>7.2f}")
+    print(f"PAYMENT METHOD:      {paymentMethod}")
+    print("===================================")
+    print(" Please show this to the canteen staff.")
+    print("===================================\n")
+    print("\n      Speedy services here in Pisay ASAP!        ")
+
+# --- MAIN PROGRAM --- 
+
+# welcome page
 while True:
-    print("""
-================================""")
-    print("""
-Welcome to Pisay Asap☆! 
+    print("\n================================\nWelcome to Pisay Asap☆!\n\n[1] Log-in\n[2] Sign-up\n[3] Close the program")
+    welcomeChoice = input("\nChoice (1, 2, or 3): ")
 
-[1] Log-in (If you have an existing account in the application)
-[2] Sign-up (If you plan to create an account in the application.)
-[3] Close the program""")
-    
-    welcomeChoice = input("""
-Choice(1, 2, or 3): """)
-
-    #Condition to check if user chose to log-in or input 1 ☆ Zea
+    # Log-in
     if welcomeChoice == "1":
-        result = login()
+        status, loggedinuser = login()
         
-        if result == "exit":
-            continue # Sends user back to the start of the while loop
-        elif result == True:
-            break # goes to snack menu
+        if status == "exit":
+            continue
+        
+        elif status:
+            break
+        
         else:
-            continue # Sends user back to the start of the while loop
-    
-     #Condition to check if user chose to sign-up or input 2 ☆ Zea
+            continue
+            
+    # Sign-up 
     elif welcomeChoice == "2":
         signUp()
-    
-    
+
+    # Exit the program
     elif welcomeChoice == "3":
         print("See you again! Speedy services only here at Pisay ASAP!")
         exit()
         
     else:
         print("Invalid Choice! Please try again.")
-    
-#Main menu/interface for ordering ☆ Zea
-        
-print("""Welcome to the main menu!
 
-================================
+# Proceeds to main menu after.
+print(f"""
+Welcome to the main menu, {loggedinuser}!
+================================""")
 
-ORDER INFORMATION""")
-
+# MAIN WELCOMING MENU
 while True:
-
     try:
-         #Function to ask user's choice between snacks or meals 
         foodchoice = input("""
+
 ================================
 
 Choose your food Category:
-
 [1] Snacks
 [2] Meals
-[3] Exit the Program
+[3] CHECKOUT
+[4] Exit
 
-Input your choice here: """)
-        
-        #Condition to check if user chose snacks or inputted 1. ☆ Eljai
+Input choice: """)
+
+        # Snacks
         if foodchoice == "1":
+            for food, price in snacks.items():
+                print(f"{food}: Php {price}.00")
+            
             while True:
-                print("""
-    Choose from the provided list:
-    """)
-                for food, price in snacks.items():
-                    print(f"""
-    {food}: Php {price}.00""")
-                    
-                snackchoice = input("""
-    Pick your Snack: """).title()
-                
+                snackchoice = input("\nPick your Snack (or 'back'): ").title()
+                if snackchoice == "Back":
+                    break
                 if snackchoice in snacks:
-                    print(f"Added {snackchoice} to your tray!")
-                    
-                #DRINKS!!1!! ☆ Zoie
-                    addDrinksChoice = input("""
-Add drinks? [Y/N]: """).upper()
+                    tray.append({"itemName": snackchoice, "itemPrice": snacks[snackchoice]})
+                    print(f"Added {snackchoice} to tray!\n")
+
+                    # Drinks add-on
+                    addDrinksChoice = input("\nAdd drinks? [Y/N]: ").upper()
                     if addDrinksChoice == "Y":
-                        
-                        print("-----DRINK MENU-----")
-                        
-                        for drinkName, drinkPrice in drinks.items():
-                            print(f"""{drinkName}: Php {drinkPrice}.00""")
-                            
-                        while True:
-                            drinkadd = input("""
-Enter your drink choice here: """).title()
-                            
-                            if drinkadd in drinks:
-                                print("Noted!")
-                                break
-                            
-                            else:
-                                print("""
-Invalid input! Please try again.
-""")
-                        
-                    elif addDrinksChoice == "N":
-                        print("Noted!")
-
-                    else:
-                        print("Invalid Value.")
-
-                    print("""
-Order Recorded! (Checkout feature comming soon)""")
+                        for drinkName, drinkPrice in drinks.items(): print(f"{drinkName}: Php {drinkPrice}.00")
+                        drinkadd = input("\nDrink choice: ").title()
+                        if drinkadd in drinks:
+                            tray.append({"itemName": drinkadd, "itemPrice": drinks[drinkadd]})
                     break
-            
                 else:
-                    print(f"Sorry, '{snackchoice}' is not on the menu. Please Try Again.")
-                
-                
-    
-        #Condition to check if user chose meals or inputted 2. ☆ 
+                    print(f"\nSorry! {snackchoice} is not on the menu. Please try again.\n")
+
+        # Meals with Rice
         elif foodchoice == "2":
+            for food, price in meals.items():
+                print(f"{food}: Php {price}.00")
             
             while True:
-                print("""
-    Choose from the provided list:
-    """)
-                for food, price in meals.items():
-                    print(f"""
-    {food}: Php {price}.00""")
-                    
-                mealchoice = input("""
-    Pick your Meal: """).title()
+                mealchoice = input("\nPick your Meal (or 'back'): ").title()
                 
-                if mealchoice in meals:
-                    print(f"Added {mealchoice} to your tray!")
-                    
-                    
-                #Rice Selection
-                    while True:
-                        for food, price in rice.items():
-                            print(f"""
-            {food}: Php {price}.00""")
-                        
-                        ricechoice = input("""
-            Pick your Rice: """).title()
-                        
-                        if ricechoice in rice:
-                            print(f"Added {ricechoice} to your tray!")
-                            break
-                        
-                        else:
-                            print("Invalid input! Please try again.")
-        
-                    addDrinksChoice = input("""
-    Add drinks? [Y/N]: """).upper()
-                    if addDrinksChoice == "Y":
-                        print("-----DRINK MENU-----")
-                        for drinkName, drinkPrice in drinks.items():
-                            print(f"""{drinkName}: Php {drinkPrice}.00""")
-                                
-                                
-                        while True:
-                            drinkadd = input("""
-    Enter your drink choice here: """).title()
-                                
-                            if drinkadd in drinks:
-                                print("Noted!")
-                                break
-                                
-                            else:
-                                print("""
-    Invalid input! Please try again.
-    """)
-                            
-                    elif addDrinksChoice == "N":
-                        print("Noted!")
-
-                    else:
-                        print("Invalid Value.")
-                    
-                    print("""
-    Order Recorded! (Checkout feature comming soon)""")
+                if mealchoice == "Back":
                     break
-                
-                else:
-                     print(f"Sorry, '{mealchoice}' is not on the menu. Please Try Again.")
+                if mealchoice in meals:
+                    tray.append({"itemName": mealchoice, "itemPrice": meals[mealchoice]})
+                    print("Added {mealchoice} to your tray!\n")
+                    
+                    # Rice Selection
+                    for riceName, ricePrice in rice.items():
+                        print(f"{riceName}: Php {ricePrice}.00")
+                    ricechoice = input("\nPick your Rice: ").title()
+                    if ricechoice in rice:
+                        tray.append({"itemName": f"Rice ({ricechoice})", "itemPrice": rice[ricechoice]})
 
-                   
-            
+                    # Drinks add-on
+                    addDrinksChoice = input("\nAdd drinks? [Y/N]: ").upper()
+                    if addDrinksChoice == "Y":
+                        for drinkName, drinkPrice in drinks.items():
+                            print(f"{drinkName}: Php {drinkPrice}.00")
+                            
+                        drinkadd = input("\nDrink choice: ").title()
+                        if drinkadd in drinks:
+                            tray.append({"itemName": drinkadd, "itemPrice": drinks[drinkadd]})
+                    break
+                else:
+                    print("\nSorry! {mealchoice} is not on the menu. Please try again.\n")
+
+        # Payment choice, bill calculation, final bill
         elif foodchoice == "3":
+            finalTray, finalTotal, chosenMethod = payment(tray)
+            if finalTray:
+                receipt(loggedinuser, finalTray, finalTotal, chosenMethod)
+            else:
+                continue
+
+        # exits the program
+        elif foodchoice == "4":
             print("See you again! Speedy services only here at Pisay ASAP!")
             break
-        
-    except ValueError:
-        
-        print("""
-Invalid choice. Please Try Again.""")
-        continue
-    except TypeError:
-        
-        print("""
-Invalid choice. Please Try Again.""")
-        continue
-    
-        
+
+    except (ValueError, TypeError):
+        print("\nInvalid choice. Please Try Again.")
+
