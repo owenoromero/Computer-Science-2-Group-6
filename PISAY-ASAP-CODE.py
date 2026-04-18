@@ -118,30 +118,34 @@ def receipt(userName, finalTray, totalPrice, paymentMethod):
 while True:
     print("\n================================\nWelcome to Pisay Asap☆!\n\n[1] Log-in\n[2] Sign-up\n[3] Close the program")
     welcomeChoice = input("\nChoice (1, 2, or 3): ")
-
-    # Log-in
-    if welcomeChoice == "1":
-        status, loggedinuser = login()
-        
-        if status == "exit":
-            continue
-        
-        elif status:
-            break
-        
-        else:
-            continue
+    
+    try:
+         # Log-in
+        if welcomeChoice == "1":
+            status, loggedinuser = login()
             
-    # Sign-up 
-    elif welcomeChoice == "2":
-        signUp()
+            if status == "exit":
+                continue
+            
+            elif status:
+                break
+            
+            else:
+                continue
+                
+        # Sign-up 
+        elif welcomeChoice == "2":
+            signUp()
+    
+        # Exit the program
+        elif welcomeChoice == "3":
+            print("See you again! Speedy services only here at Pisay ASAP!")
+            exit()
 
-    # Exit the program
-    elif welcomeChoice == "3":
-        print("See you again! Speedy services only here at Pisay ASAP!")
-        exit()
-        
-    else:
+    except:
+        print("Invalid Choice! Please try again.")
+    
+    except ValueError:
         print("Invalid Choice! Please try again.")
 
 # Proceeds to main menu after.
