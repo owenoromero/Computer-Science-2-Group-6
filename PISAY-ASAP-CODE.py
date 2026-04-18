@@ -223,6 +223,7 @@ Input choice: """)
             finalTray, finalTotal, chosenMethod = payment(tray)
             if finalTray:
                 receipt(loggedinuser, finalTray, finalTotal, chosenMethod)
+                break
             else:
                 continue
 
