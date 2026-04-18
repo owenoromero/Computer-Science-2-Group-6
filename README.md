@@ -14,7 +14,7 @@
 
 **2. Sign-up and Create an Account**
   - *Sign-up* in the Log-in/Sign-up Page to create an account in the program, and to start your journey in **Pisay ASAP!☆**.
-    -**Note:** If you already have an existing account in the program, then you only need to *Log-in* to access your existing account.
+    - **Note:** If you already have an existing account in the program, then you only need to *Log-in* to access your existing account.
 
 ## Help Center for Users
 
