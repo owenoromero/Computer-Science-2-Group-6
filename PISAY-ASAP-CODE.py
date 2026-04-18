@@ -96,8 +96,8 @@ def payment(currentTray):
 # final receipt (list of items in tray 
 def receipt(userName, finalTray, totalPrice, paymentMethod):
     print("\n===================================")
-    print("           PISAY ASAP!             ")
-    print("       Official Digital Slip       ")
+    print("                  PISAY ASAP!             ")
+    print("              Official Digital Slip       ")
     print("===================================")
     print(f"Customer: {userName}")
     print("===================================")
@@ -110,7 +110,7 @@ def receipt(userName, finalTray, totalPrice, paymentMethod):
     print("===================================")
     print(" Please show this to the canteen staff.")
     print("===================================\n")
-    print("\n      Speedy services here in Pisay ASAP!        ")
+    print("      Speedy services here in Pisay ASAP!        ")
 
 # --- MAIN PROGRAM --- 
 
@@ -118,34 +118,26 @@ def receipt(userName, finalTray, totalPrice, paymentMethod):
 while True:
     print("\n================================\nWelcome to Pisay Asap☆!\n\n[1] Log-in\n[2] Sign-up\n[3] Close the program")
     welcomeChoice = input("\nChoice (1, 2, or 3): ")
-    
-    try:
-         # Log-in
-        if welcomeChoice == "1":
-            status, loggedinuser = login()
-            
-            if status == "exit":
-                continue
-            
-            elif status:
-                break
-            
-            else:
-                continue
-                
-        # Sign-up 
-        elif welcomeChoice == "2":
-            signUp()
-    
-        # Exit the program
-        elif welcomeChoice == "3":
-            print("See you again! Speedy services only here at Pisay ASAP!")
-            exit()
 
-    except:
-        print("Invalid Choice! Please try again.")
-    
-    except ValueError:
+    if welcomeChoice == "1":
+        status, loggedinuser = login()
+        
+        if status == "exit":
+            continue
+        
+        elif status:
+            break
+        
+        else:
+            continue
+    elif welcomeChoice == "2":
+        signUp()
+        
+    elif welcomeChoice == "3":
+        print("See you again! Speedy services only here at Pisay ASAP!")
+        exit()
+        
+    else:
         print("Invalid Choice! Please try again.")
 
 # Proceeds to main menu after.
@@ -153,7 +145,7 @@ print(f"""
 Welcome to the main menu, {loggedinuser}!
 ================================""")
 
-# MAIN WELCOMING MENU
+# --- MAIN WELCOMING MENU ---
 while True:
     try:
         foodchoice = input("""
@@ -241,4 +233,5 @@ Input choice: """)
 
     except (ValueError, TypeError):
         print("\nInvalid choice. Please Try Again.")
+
 
