@@ -1,7 +1,7 @@
 # Computer-Science-2-Group-6
 # Pisay ASAP!☆
 
-Pisay ASAP!☆ is a program developed by Grade 8 Sampaguita's Group 6, under the subject Computer Science 2 and subject teacher Ma'am Bcel. Pisay ASAP!☆ is a program that lets the scholars of the Philippines Science High School CALABARZON Region Campus in Batangas City, to manage their food order scheduling with the Cafeteria and Coop. 
+Pisay ASAP!☆ is a program developed by Grade 8 Sampaguita's Group 6, under the subject Computer Science 2 and subject teacher Ma'am Bcel. Pisay ASAP!☆ is a program that lets the scholars of the Philippines Science High School CALABARZON Region Campus in Batangas City to manage their food order scheduling and reservation with the Cafeteria and Coop for wise time management. 
 
 ## Objectives and Purpose
 
