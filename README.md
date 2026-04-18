@@ -1,6 +1,7 @@
 # Computer-Science-2-Group-6
 # Pisay ASAP!☆
 
+Pisay ASAP!☆ is a program developed by Grade 8 Sampaguita's Group 6, under the subject Computer Science 2 and subject teacher Ma'am Bcel. Pisay ASAP!☆ is a program that lets the scholars of the Philippines Science High School CALABARZON Region Campus in Batangas City, to manage their food order scheduling with the Cafeteria and Coop. 
 
 ## Objectives and Purpose
 
@@ -9,7 +10,7 @@
 ## Program Set-up Guide
 
 **1. Download Python**
- - The main programming language of **Pisay ASAP!☆** is Python, thus, the user must first download the programming language to access the program
+ - The main programming language of **Pisay ASAP!☆** is Python; thus, the user must first download the programming language to access the program
     - **Note:** The programmers recommend the user to download the most recent version of Python, which as of now is **3.14**.
 
 **2. Sign-up and Create an Account**
@@ -21,6 +22,7 @@
  - The user can choose from a variety of food, and they can add these to their tray, but, they can still later on remove them.
  - Users can also choose drinks after choosing their food
  - If the user chooses an invalid food, they will be redirected back to the Main Menu.
+   - **Note:** In the main menu, the user has the option to exit the program.
 
 **4. Checkout**
  - After the user finalises their tray, they can choose to check out and pay, then a receipt of their tray will be shown.
