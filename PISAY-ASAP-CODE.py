@@ -1,4 +1,4 @@
-#Pisay ASAP
+#Pisay ASAP!☆
 
 # Dictionary/Database of usernames and passwords in the program
 users = {
@@ -96,7 +96,7 @@ def payment(currentTray):
 # final receipt (list of items in tray 
 def receipt(userName, finalTray, totalPrice, paymentMethod):
     print("\n===================================")
-    print("                  PISAY ASAP!             ")
+    print("                  Pisay ASAP!☆!             ")
     print("              Official Digital Slip       ")
     print("===================================")
     print(f"Customer: {userName}")
@@ -110,13 +110,13 @@ def receipt(userName, finalTray, totalPrice, paymentMethod):
     print("===================================")
     print(" Please show this to the canteen staff.")
     print("===================================\n")
-    print("      Speedy services here in Pisay ASAP!        ")
+    print("      Speedy services here in Pisay ASAP!☆!        ")
 
 # --- MAIN PROGRAM --- 
 
 # welcome page
 while True:
-    print("\n================================\nWelcome to Pisay Asap☆!\n\n[1] Log-in\n[2] Sign-up\n[3] Close the program")
+    print("\n================================\nWelcome to Pisay ASAP!☆☆!\n\n[1] Log-in\n[2] Sign-up\n[3] Close the program")
     welcomeChoice = input("\nChoice (1, 2, or 3): ")
 
     if welcomeChoice == "1":
@@ -134,7 +134,7 @@ while True:
         signUp()
         
     elif welcomeChoice == "3":
-        print("See you again! Speedy services only here at Pisay ASAP!")
+        print("See you again! Speedy services only here at Pisay ASAP!☆!")
         exit()
         
     else:
@@ -228,7 +228,7 @@ Input choice: """)
 
         # exits the program
         elif foodchoice == "4":
-            print("See you again! Speedy services only here at Pisay ASAP!")
+            print("See you again! Speedy services only here at Pisay ASAP!☆!")
             break
 
     except (ValueError, TypeError):
