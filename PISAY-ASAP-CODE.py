@@ -1,6 +1,6 @@
 #Pisay ASAP
 
-# Dictionary/Database of usernames and passwords
+# Dictionary/Database of usernames and passwords in the program
 users = {
     "Villalon, Zea": "123"
 }
