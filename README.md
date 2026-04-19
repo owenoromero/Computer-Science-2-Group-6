@@ -7,7 +7,7 @@ Pisay ASAP!☆ is a program developed by Grade 8 Sampaguita's Group 6, under the
 
 Pisay ASAP!☆ aims to: 
 
-1. Provide PSHS-CALABARZON RC students, faculty, and staff an easy system to pre-order food at the school cafeteria and/or Co-Op,
+1. Provide PSHS-CALABARZONRCIBC students, faculty, and staff an easy system to pre-order food at the school cafeteria and/or Co-Op,
 
 2. Let users find out the available meals and snacks on that day with a user-friendly interface,
 
