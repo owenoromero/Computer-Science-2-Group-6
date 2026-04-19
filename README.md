@@ -42,5 +42,16 @@ Pisay ASAP!☆ helps PSHS-CALABARZON scholars and staff easily pre-order and pic
 **4. Checkout**
  - After the user finalises their tray, they can choose to check out and pay, and then a receipt for their tray will be shown.
 
+## Sample Output
+<img width="518" height="707" alt="Screenshot 2026-04-19 002300" src="https://github.com/user-attachments/assets/0c9e3c67-1c93-4da7-9d6a-3f9e3fa4323e" />
+<img width="674" height="530" alt="Screenshot 2026-04-19 002327" src="https://github.com/user-attachments/assets/f031a589-1dfe-4a74-b074-9c20a6df5376" />
+<img width="471" height="626" alt="Screenshot 2026-04-19 002647" src="https://github.com/user-attachments/assets/e7c7e5ce-397a-4184-8579-e464566d1bb6" />
+
+
 ## Contributors and Contributions
+- #13 - ESPAÑO -
+- #23 - NICDAO - Programmer, Description
+- #27 - ROMERO - Programmer, Objectives & Purpose
+- #28 - SARMIENTO - Programmer, Program set-up guide
+- #30 - VILLALON - Programmer, Sample output
 
