@@ -177,9 +177,17 @@ Input choice: """)
                     addDrinksChoice = input("\nAdd drinks? [Y/N]: ").upper()
                     if addDrinksChoice == "Y":
                         for drinkName, drinkPrice in drinks.items(): print(f"{drinkName}: Php {drinkPrice}.00")
-                        drinkadd = input("\nDrink choice: ").title()
-                        if drinkadd in drinks:
-                            tray.append({"itemName": drinkadd, "itemPrice": drinks[drinkadd]})
+                        
+                        while True:
+                            drinkadd = input("\nDrink choice: ").title()
+                            if drinkadd in drinks:
+                                tray.append({"itemName": drinkadd, "itemPrice": drinks[drinkadd]})
+                                print("{drinkadd} added to your tray!")
+                                break
+                                
+                            else:
+                                print("Drink not found! Please try again.")
+                                continue
                     break
                 else:
                     print(f"\nSorry! {snackchoice} is not on the menu. Please try again.\n")
@@ -210,10 +218,17 @@ Input choice: """)
                     if addDrinksChoice == "Y":
                         for drinkName, drinkPrice in drinks.items():
                             print(f"{drinkName}: Php {drinkPrice}.00")
-                            
-                        drinkadd = input("\nDrink choice: ").title()
-                        if drinkadd in drinks:
-                            tray.append({"itemName": drinkadd, "itemPrice": drinks[drinkadd]})
+                        
+                        while True:
+                            drinkadd = input("\nDrink choice: ").title()
+                            if drinkadd in drinks:
+                                tray.append({"itemName": drinkadd, "itemPrice": drinks[drinkadd]})
+                                print("{drinkadd} added to your tray!")
+                                break
+                                
+                            else:
+                                print("Drink not found! Please try again.")
+                                continue
                     break
                 else:
                     print("\nSorry! {mealchoice} is not on the menu. Please try again.\n")
