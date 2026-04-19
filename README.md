@@ -5,6 +5,16 @@ Pisay ASAP!☆ is a program developed by Grade 8 Sampaguita's Group 6, under the
 
 ## Objectives and Purpose
 
+Pisay ASAP!☆ aims to: 
+
+1. Provide PSHS-CALABARZON RC students, faculty, and staff an easy system to pre-order food at the school cafeteria and/or Co-Op,
+
+2. Let users find out the available meals and snacks on that day with a user-friendly interface,
+
+3. Cut down on long lines caused by indecisive buyers,
+
+4. And finally, save time for the canteen workers, staff, and scholars.
+
 ## Relevance and Usefulness
 
 Pisay ASAP!☆ helps PSHS-CALABARZON scholars and staff easily pre-order and pick up food from the canteen and co-op. Pisay ASAP!☆ can reduce waiting lines during events, and everyday break periods of scholars and staff. By simply pre-ordering from Pisay ASAP!☆, you can pick up your order at the canteen or co-op at any specified time. 
