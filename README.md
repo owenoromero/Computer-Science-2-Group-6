@@ -42,7 +42,5 @@ Pisay ASAP!☆ helps PSHS-CALABARZON scholars and staff easily pre-order and pic
 **4. Checkout**
  - After the user finalises their tray, they can choose to check out and pay, and then a receipt for their tray will be shown.
 
-## Help Center for Users
-
 ## Contributors and Contributions
 
