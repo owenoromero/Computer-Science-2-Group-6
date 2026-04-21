@@ -5,7 +5,7 @@ users = {
     "Villalon, Zea": "123"
 }
 
-# --- Menus --- oww
+# --- Menus ---
 snacks = {
     "Mamon": 34,
     "Magic Flakes": 25,
@@ -246,6 +246,8 @@ Input choice: """)
         elif foodchoice == "4":
             print("See you again! Speedy services only here at Pisay ASAP!☆!")
             break
+        else:
+            print("invalid choice. Please try again."
 
     except (ValueError, TypeError):
         print("\nInvalid choice. Please Try Again.")
